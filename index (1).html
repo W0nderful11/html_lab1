@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <title>News Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link
+        rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    >
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="bg-primary text-white p-3">
+        <div class="container">
+            <h1 class="mb-0">News Dashboard</h1>
+        </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <!-- Navbar brand -->
+            <a class="navbar-brand" href="#">News</a>
+            <!-- Toggler/collapsibe Button -->
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNav"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <button id="theme-toggle" class="btn btn-secondary">Toggle Theme</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <div class="row">
+
+            <!-- Main Articles Section -->
+            <main class="col-md-8">
+
+                <!-- Sort Options -->
+                <div class="mb-3">
+                    <label for="sortOptions">Sort by:</label>
+                    <select id="sortOptions" class="custom-select w-auto">
+                        <option value="date">Date</option>
+                        <option value="views">Popularity</option>
+                    </select>
+                </div>
+
+                <!-- Articles List -->
+                <div id="articles-container">
+                    <!-- Articles will be loaded here dynamically -->
+                </div>
+
+            </main>
+
+            <!-- Sidebar -->
+            <aside class="col-md-4">
+                <!-- Most Popular Article -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        Most Popular Article
+                    </div>
+                    <div class="card-body" id="most-popular-article">
+                        <!-- Most popular article will be displayed here -->
+                    </div>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white p-3 mt-4">
+        <div class="container text-center">
+            &copy; 2024 News Dashboard
+        </div>
+    </footer>
+
+    <!-- Article Modal -->
+    <div
+        class="modal fade"
+        id="articleModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="articleModalLabel"
+        aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="articleModalLabel">Article Title</h4>
+            <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="articleModalContent">
+            <!-- Article content will be loaded here -->
+          </div>
+          <div class="modal-footer">
+            <span id="articleModalReadingTime" class="mr-auto"></span>
+            <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+            >
+                Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- jQuery and Bootstrap JS -->
+    <script
+        src="https://code.jquery.com/jquery-3.5.1.min.js"
+    ></script>
+    <script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"
+    ></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
